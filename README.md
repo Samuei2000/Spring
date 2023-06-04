@@ -8,13 +8,13 @@ Then you can ignore/delete the mvnw files,just use Maven as you normally would t
 `mvn clean compile test`<br>
 add maven plugin:
 ````XML
-`<build>
+<build>
 	<plugins>
 		<plugin>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-</build>`
+		</plugin>
+	</plugins>
+</build>
 ````
 Then run `mvn package` and `mvn spring-boot:run` or  `./mvnw package` and `./mvnw spring-boot:run`
