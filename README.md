@@ -18,3 +18,42 @@ add maven plugin:
 </build>
 ````
 Then run `mvn package` and `mvn spring-boot:run` or  `./mvnw package` and `./mvnw spring-boot:run`
+
+# Spring Boot Properties
+[Documentation](https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html)
+
+## Core Properties
+````
+# Log levels severity mapping
+logging.level.org.springframework=DEBUG
+logging.level.org.hibernate=TRACE
+logging.level.com.luv2code=INFO
+# Log file name
+logging.file.name=my-crazy-stuff.log
+logging.file.path=c:/myapps/demo
+````
+## Web Properties
+````
+# HTTP server port
+server.port=7070
+# Context path of the application
+server.servlet.context-path=/my-silly-app
+# Default HTTP session time out
+server.servlet.session.timeout=15m
+````
+## Security Properties
+````
+# Default user name
+spring.security.user.name=admin
+# Password for default user
+spring.security.user.password=topsecret
+````
+## Data Properties
+````
+# JDBC URL of the database
+spring.datasource.url=jdbc:mysql://localhost:3306/ecommerce
+# Login username of the database
+spring.datasource.username=scott
+# Login password of the database
+spring.datasource.password=tiger
+````
