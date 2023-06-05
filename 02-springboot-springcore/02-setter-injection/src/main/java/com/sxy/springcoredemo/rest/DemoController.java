@@ -2,26 +2,23 @@ package com.sxy.springcoredemo.rest;
 
 import com.sxy.springcoredemo.common.Coach;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class DemoController {
-    //define a field for the dependency
-    //this field depends on any implement class of Coach interface
+
+    // define a private field for the dependency
     private Coach myCoach;
 
     @Autowired
-    public void setMyCoach(Coach myCoach) {
-        this.myCoach = myCoach;
+    public DemoController(@Qualifier("cricketCoach") Coach theCoach) {
+        myCoach = theCoach;
     }
-    /*@Autowired
-    public String doSome(Coach theCoach) {
-        We need a "theCoach",Spring will help us find
-    }*/
 
     @GetMapping("/dailyworkout")
-    public String getDailyWorkout(){
+    public String getDailyWorkout() {
         return myCoach.getDailyWorkout();
     }
 }
