@@ -3,6 +3,7 @@ package com.example.cruddemo.rest;
 import com.example.cruddemo.entity.Employee;
 import com.example.cruddemo.service.EmployeeService;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -25,6 +26,16 @@ public class EmployeeRestController {
     @GetMapping("/employees")
     public List<Employee> findAll() {
         return employeeService.findAll();
+    }
+
+    //add mapping for GET /employees/{employeeId}
+    @GetMapping("/employees/{employeeId}")
+    public Employee getEmployee(@PathVariable int employeeId){
+        Employee employeeById = employeeService.findById(employeeId);
+        if(employeeById==null){
+            throw new RuntimeException("Employee id no found:"+employeeId);
+        }
+        return employeeById;
     }
 
 }
