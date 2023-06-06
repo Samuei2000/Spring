@@ -57,3 +57,12 @@ spring.datasource.username=scott
 # Login password of the database
 spring.datasource.password=tiger
 ````
+# MySQL
+## How to change MySQL auto increment width
+````
+alter table student_tracker.student auto_increment =3000 
+````
+## How to remove all data from table and reset increment width to 1
+````
+TRUNCATE student_tracker.student
+````
