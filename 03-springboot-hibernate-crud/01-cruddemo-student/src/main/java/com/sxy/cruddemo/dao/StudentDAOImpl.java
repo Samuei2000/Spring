@@ -14,10 +14,15 @@ public class StudentDAOImpl implements StudentDAO{
     @Autowired
     public  StudentDAOImpl(EntityManager entityManager){
         this.entityManager=entityManager;
+        System.out.println(this.getClass().hashCode());
     }
     @Override
     @Transactional
     public void save(Student theStudent) {
         entityManager.persist(theStudent);
+    }
+    @Override
+    public Student findById(Integer id) {
+        return entityManager.find(Student.class, id);
     }
 }
