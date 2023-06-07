@@ -75,3 +75,8 @@ TRUNCATE student_tracker.student
 | GET | /api/empolyees/{employeeId} | Read a single employee |
 | PUT | /api/empolyees/ | Update an existing employee |
 | DELETE | /api/empolyees/{employeeId} | Delete an existing employee |
+# Spring Boot DATA REST
+For Spring Data Rest,you only need 3 items:
+1. Your Entity
+2. JpaRepository: EmployeeRepository extends JpaRepository
+3. Maven POM dependency for: spring-boot-starter-data-rest
