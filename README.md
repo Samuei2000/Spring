@@ -66,3 +66,12 @@ alter table student_tracker.student auto_increment =3000
 ````
 TRUNCATE student_tracker.student
 ````
+
+#Spring Boot REST API
+| HTTP Method | EndPoint | CRUD Action |
+| :-----:| :---: | :---: |
+| POST | /api/empolyees/ | Create a new employee |
+| GET | /api/empolyees/ | Read a list of employee |
+| GET | /api/empolyees/{employeeId} | Read a single employee |
+| PUT | /api/empolyees/ | Update an existing employee |
+| DELETE | /api/empolyees/{employeeId} | Delete an existing employee |
